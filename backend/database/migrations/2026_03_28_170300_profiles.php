@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->string('profile_id');
             $table->string('github_username')->unique();
             $table->string('avatar_url')->nullable();
             $table->integer('score')->default(0);

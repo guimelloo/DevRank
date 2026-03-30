@@ -1,8 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Profiles;
+use App\Http\Controllers\Controller;
+use Laravel\Socialite\Socialite;
 
-abstract class Controller
+class ProfilesController extends Controller
 {
+    private ProfilesService $profilesService;
 
+    private function __construct(ProfilesService $profilesService) {
+        $this->profilesService = $profilesService;
+    }
 }
